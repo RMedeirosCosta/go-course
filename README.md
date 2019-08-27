@@ -181,3 +181,39 @@ na posição 29 nós temos o hexadecimal 0x6e
 na posição 30 nós temos o hexadecimal 0x64
 na posição 31 nós temos o hexadecimal 0x2
 ```
+
+### Numeral Systems
+#### Os mais comuns
+- Binário: ![](https://i.imgur.com/YGGVzt3.gif)
+- Octal: ![](https://i.imgur.com/sy2eTTU.gif)
+- Decimal: ![](https://i.imgur.com/lOusGOZ.gif)
+- Hexadecimal: ![](https://i.imgur.com/TUSWQKT.gif)
+
+``` go
+package main
+
+import "fmt"
+
+func main() {
+	shinobi := "Uchiha, Susuke"
+	fmt.Println(shinobi)
+
+	byte_slice := []byte(shinobi)
+	fmt.Println(byte_slice)
+
+	n := byte_slice[0]
+	fmt.Println(n)
+	fmt.Printf("%T\n", n)
+	fmt.Printf("%b\n", n)
+	fmt.Printf("%#X\n", n)
+}
+```
+
+``` shell
+Uchiha, Susuke
+[85 99 104 105 104 97 44 32 83 117 115 117 107 101]
+85
+uint8
+1010101
+0X55
+``` 
