@@ -103,3 +103,7 @@ func main() {
 PI 3.141592653589793 is a float64
 ```
 
+Variáveis de ambiente do pacote `runtime`
+
+**GOOS**: Sistema operacional (android, darwin, dragonfly, netbsd, linux)
+**GOARCH**: Arquitetura: 386, amd64, arm
