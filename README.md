@@ -87,4 +87,19 @@ Tipos numéricos predeclarados que serão decididos pelo compilador dependendo d
 > int      same size as uint
 > uintptr  an unsigned integer large enough to store the uninterpreted bits of a pointer value
 
-uintptr: é um tipo para tratar um ponteiro com um inteiro positivo, para facilitar uma operação aritmética específica. Pode-se pensar como a tradução de um ponteiro para o índice que ele representa no espaço de memória virtual.
+uintptr: é um tipo para tratar um ponteiro com um inteiro positivo, para facilitar uma operação aritmética específica. Pode-se pensar como a tradução de um ponteiro para o índice que ele representa no espaço de memória virtual
+
+``` go
+package main
+
+import "fmt"
+
+func main() {
+	pi := 3.14159265358979323846264
+	fmt.Printf("PI %v is a %T", pi, pi)
+}
+```
+``` shell
+PI 3.141592653589793 is a float64
+```
+
