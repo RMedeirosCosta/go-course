@@ -107,3 +107,77 @@ Variáveis de ambiente do pacote `runtime`
 
 **GOOS**: Sistema operacional (android, darwin, dragonfly, netbsd, linux)
 **GOARCH**: Arquitetura: 386, amd64, arm
+
+### String type
+
+- É possível declarar com aspas duplas e com acento grave (crase, backtick/backquote). Acento grave serve para declara raw string literals (Java 12, String Templates ECMAScript 2015) 
+- String é um *alias* para slice of bytes, algo como array de bytes;
+- String é imutável;
+
+``` go
+package main
+
+import "fmt"
+
+func main() {
+	montanas_quote := `Say hello to my little,
+ friend!`
+	fmt.Println(montanas_quote)
+	fmt.Printf("%T\n", montanas_quote)
+
+	byte_string := []byte(montanas_quote)
+	fmt.Println(byte_string)
+	fmt.Printf("%T\n", byte_string)
+
+	for i := 0; i < len(montanas_quote); i++ {
+		fmt.Printf("%#U ", montanas_quote[i])
+	}
+
+	fmt.Println("")
+
+	for i, v := range montanas_quote {
+		fmt.Printf("na posição %d nós temos o hexadecimal %#x\n", i, v)
+	}
+}
+```
+
+``` shell
+Say hello to my little,
+ friend!
+string
+[83 97 121 32 104 101 108 108 111 32 116 111 32 109 121 32 108 105 116 116 108 101 44 10 32 102 114 105 101 110 100 33]
+[]uint8
+U+0053 'S' U+0061 'a' U+0079 'y' U+0020 ' ' U+0068 'h' U+0065 'e' U+006C 'l' U+006C 'l' U+006F 'o' U+0020 ' ' U+0074 't' U+006F 'o' U+0020 ' ' U+006D 'm' U+0079 'y' U+0020 ' ' U+006C 'l' U+0069 'i' U+0074 't' U+0074 't' U+006C 'l' U+0065 'e' U+002C ',' U+000A U+0020 ' ' U+0066 'f' U+0072 'r' U+0069 'i' U+0065 'e' U+006E 'n' U+0064 'd' U+0021 '!' 
+na posição 0 nós temos o hexadecimal 0x53
+na posição 1 nós temos o hexadecimal 0x61
+na posição 2 nós temos o hexadecimal 0x79
+na posição 3 nós temos o hexadecimal 0x20
+na posição 4 nós temos o hexadecimal 0x68
+na posição 5 nós temos o hexadecimal 0x65
+na posição 6 nós temos o hexadecimal 0x6c
+na posição 7 nós temos o hexadecimal 0x6c
+na posição 8 nós temos o hexadecimal 0x6f
+na posição 9 nós temos o hexadecimal 0x20
+na posição 10 nós temos o hexadecimal 0x74
+na posição 11 nós temos o hexadecimal 0x6f
+na posição 12 nós temos o hexadecimal 0x20
+na posição 13 nós temos o hexadecimal 0x6d
+na posição 14 nós temos o hexadecimal 0x79
+na posição 15 nós temos o hexadecimal 0x20
+na posição 16 nós temos o hexadecimal 0x6c
+na posição 17 nós temos o hexadecimal 0x69
+na posição 18 nós temos o hexadecimal 0x74
+na posição 19 nós temos o hexadecimal 0x74
+na posição 20 nós temos o hexadecimal 0x6c
+na posição 21 nós temos o hexadecimal 0x65
+na posição 22 nós temos o hexadecimal 0x2c
+na posição 23 nós temos o hexadecimal 0xa
+na posição 24 nós temos o hexadecimal 0x20
+na posição 25 nós temos o hexadecimal 0x66
+na posição 26 nós temos o hexadecimal 0x72
+na posição 27 nós temos o hexadecimal 0x69
+na posição 28 nós temos o hexadecimal 0x65
+na posição 29 nós temos o hexadecimal 0x6e
+na posição 30 nós temos o hexadecimal 0x64
+na posição 31 nós temos o hexadecimal 0x2
+```
