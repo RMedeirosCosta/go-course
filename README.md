@@ -240,3 +240,45 @@ func main() {
 666
 My typed constant
 ```
+
+## Iota
+
+Incrementa automaticamente
+
+``` go
+package main
+
+import "fmt"
+
+const (
+	a = iota
+	b = iota
+	c = iota
+)
+
+const (
+	d = iota
+	e
+	f
+)
+
+func main() {
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(e)
+	fmt.Println(f)
+}
+```
+
+```shell
+0
+1
+2
+0
+1
+2
+```
+
+
