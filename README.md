@@ -217,3 +217,26 @@ uint8
 1010101
 0X55
 ``` 
+
+### Constants
+
+``` go
+package main
+
+import "fmt"
+
+const (
+	beast_number          = 666
+	typed_constant string = "My typed constant"
+)
+
+func main() {
+	fmt.Println(beast_number)
+	fmt.Println(typed_constant)
+}
+```
+ 
+``` shell
+666
+My typed constant
+```
