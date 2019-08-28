@@ -281,6 +281,80 @@ func main() {
 2
 ```
 
+### Bit Shifting
+
+> Bitwise operation
+> In digital computer programming, a bitwise operation operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.
+> 
+Operadores: `<< left shift`, `>> right shif`
+
+##### Primeiro exemplo
+``` go
+package main
+
+import "fmt"
+
+func main() {
+	x := 4
+	fmt.Printf("%d\t\t%b\n", x, x)
+
+	y := x << 1
+	fmt.Printf("%d\t\t%b", y, y)
+}
+```
+
+``` shell
+4		100
+8		1000
+```
+##### Segundo exemplo
+``` go
+package main
+
+import "fmt"
+
+func main() {
+	kb := 1024
+	mb := 1024 * kb
+	gb := 1024 * mb
+
+	fmt.Printf("%d\t\t\t%b\n", kb, kb)
+	fmt.Printf("%d\t\t\t%b\n", mb, mb)
+	fmt.Printf("%d\t\t%b\n", gb, gb)
+}
+```
+
+``` shell
+1024			10000000000
+1048576			100000000000000000000
+1073741824		1000000000000000000000000000000
+```
+
+##### Terceiro exemplo
+``` go 
+package main
+
+import "fmt"
+
+const (
+	_  = iota
+	kb = 1 << (iota * 10)
+	mb = 1 << (iota * 10)
+	gb = 1 << (iota * 10)
+)
+
+func main() {
+	fmt.Printf("%d\t\t\t%b\n", kb, kb)
+	fmt.Printf("%d\t\t\t%b\n", mb, mb)
+	fmt.Printf("%d\t\t%b\n", gb, gb)
+}
+```
+
+``` shell
+1024			10000000000
+1048576			100000000000000000000
+1073741824		1000000000000000000000000000000
+```
 
 # Section 8 Control flow
 ## For
