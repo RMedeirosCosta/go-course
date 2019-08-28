@@ -282,3 +282,11 @@ func main() {
 ```
 
 
+# Section 8 Control flow
+## For
+* O único laço de repetição é o `for` (não existe o `while`)
+* Estrutura: 
+	```go
+	for init; condition; post{
+	}
+	```
