@@ -359,6 +359,17 @@ func main() {
 # Section 8 Control flow
 ## For
 * O único laço de repetição é o `for` (não existe o `while`)
+	```go
+	i := 0
+	// usando for como while
+		for {
+			if i > 5 {
+				break
+			}
+			fmt.Println("Value: ", i)
+			i++
+		}
+	```
 * Estrutura: 
 	```go
 	for init; condition; post{
