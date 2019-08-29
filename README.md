@@ -364,3 +364,29 @@ func main() {
 	for init; condition; post{
 	}
 	```
+* For statement (a iteração pode ser controlada de 3 formas)
+```go
+ForStmt = "for" [ Condition | ForClause | RangeClause ] Block .
+Condition = Expression .
+```
+  * condição única (Condition): https://play.golang.org/p/zBoGpA2h6lz
+	```go
+	i := 0
+	for i < 5 {
+		fmt.Println("Value: ", i)
+		i++
+	}
+	```
+  * com clausula for (ForClause): https://play.golang.org/p/hZkGG6DhED6
+	```go
+	for i := 0; i < 5; i++ {
+		fmt.Println("Value: ", i)
+	}
+	```
+  * com range (RangeClause): https://play.golang.org/p/sWXkcrJDMtz
+	```go
+	i := []string{"Pipoca", "doce"}
+	for _, x := range i {
+		fmt.Println("Value: ", x)
+	}
+	```
