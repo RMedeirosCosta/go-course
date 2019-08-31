@@ -358,7 +358,7 @@ func main() {
 
 # Section 8 Control flow
 ## For
-* O único laço de repetição é o `for` (não existe o `while`)
+* O único laço de repetição é o `for` (não existe o `while`): https://play.golang.org/p/pq0Lu2fyzb3
 	```go
 	i := 0
 	// usando for como while
@@ -401,3 +401,75 @@ Condition = Expression .
 		fmt.Println("Value: ", x)
 	}
 	```
+    * A função `range` retorna o 2 atributos, a posição e o valor: https://play.golang.org/p/0omGxXoNPF8
+		```go
+		i := []string{"Pipoca", "doce"}
+		for k, x := range i {
+			fmt.Println("Index: ", k)
+			fmt.Println("Value: ", x)
+		}
+		```
+## Break e Continue
+* Break: https://play.golang.org/p/pq0Lu2fyzb3
+	```go
+	i := 0
+	for {
+		if i > 5 {
+			break
+		}
+		fmt.Println("Value: ", i)
+		i++
+	}
+	```
+* Continue: https://play.golang.org/p/65PfkV9-bD1
+	```go
+	i := 0
+	e := 50
+	fmt.Printf("Números pares de %d à %d", i, e)
+	for ; i <= e; i++ {
+		if i%2 != 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+	```
+## Imprimindo caracteres ASCII
+`Printf` utilizado para impressão e formatação ([documentação](https://godoc.org/fmt))
+```go
+for i := 33; i <= 122; i++ {
+		fmt.Printf("%v\t%#U\n", i, i)
+}
+```
+## If statement
+A instrução que precede a expressão será executada primeiro.
+* Estrutura: (https://golang.org/ref/spec#If_statements)
+	```go
+	"if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ]
+	```
+* Exemplo: (https://play.golang.org/p/ffPZ2grXIPF)
+	```go
+	// o escopo da variável x criada é apenas o if
+	if x := 1; x > 0 {}
+	```
+* else if: (https://play.golang.org/p/owD04l9i-BU)
+	```go
+	if x := 0; x > 0 {
+		fmt.Print("o valor é maior que 0")
+	} else if x < 0 {
+		fmt.Print("o valor é menor que 0")
+	} else if x == 0 {
+		fmt.Print("o valor é 0")
+	}
+	```
+## Loop, if e módulo
+Link: https://play.golang.org/p/LubYYNCVT4G
+```go
+i := 0
+e := 100
+fmt.Printf("Números ímpares de %d à %d", i, e)
+for ; i <= e; i++ {
+	if i%3 == 0 {
+		fmt.Println(i)
+	}
+}
+```
