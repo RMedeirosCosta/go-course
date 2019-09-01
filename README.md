@@ -1,6 +1,6 @@
 ## go-course
 
-### Bool type
+## Bool type
 - Zero value: `false`;
 - Operators: `==`, `<=`, `>=` e etc;
 - Não tem triplo igual como no Javascript (estritamente igual);
@@ -18,7 +18,7 @@ func main() {
 }
 ```
 
-### How Computer Works
+## How Computer Works
 - Computadores rodam em eletricidade;
 - Eletricidade tem dois estados: **ON** e **OFF**
 - Alusao com o Halloween americano (Ligado ok, desligado cai fora);
@@ -61,7 +61,7 @@ Intel: Integrated Eletronics
 
 Dica de filme: [Jogo da Imitação](https://www.rottentomatoes.com/m/the_imitation_game/)
 
-### Numeric Types
+## Numeric Types
 > uint8       the set of all unsigned  8-bit integers (0 to 255)
 > uint16      the set of all unsigned 16-bit integers (0 to 65535)
 > uint32      the set of all unsigned 32-bit integers (0 to 4294967295)
@@ -108,7 +108,7 @@ Variáveis de ambiente do pacote `runtime`
 **GOOS**: Sistema operacional (android, darwin, dragonfly, netbsd, linux)
 **GOARCH**: Arquitetura: 386, amd64, arm
 
-### String type
+## String type
 
 - É possível declarar com aspas duplas e com acento grave (crase, backtick/backquote). Acento grave serve para declara raw string literals (Java 12, String Templates ECMAScript 2015) 
 - String é um *alias* para slice of bytes, algo como array de bytes;
@@ -182,7 +182,7 @@ na posição 30 nós temos o hexadecimal 0x64
 na posição 31 nós temos o hexadecimal 0x2
 ```
 
-### Numeral Systems
+## Numeral Systems
 #### Os mais comuns
 - Binário: ![](https://i.imgur.com/YGGVzt3.gif)
 - Octal: ![](https://i.imgur.com/sy2eTTU.gif)
@@ -218,7 +218,7 @@ uint8
 0X55
 ``` 
 
-### Constants
+## Constants
 
 ``` go
 package main
@@ -281,7 +281,7 @@ func main() {
 2
 ```
 
-### Bit Shifting
+## Bit Shifting
 
 > Bitwise operation
 > In digital computer programming, a bitwise operation operates on one or more bit patterns or binary numerals at the level of their individual bits. It is a fast, simple action directly supported by the processor, and is used to manipulate values for comparisons and calculations.
