@@ -473,3 +473,70 @@ for ; i <= e; i++ {
 	}
 }
 ```
+
+## Switch
+* Estrutura: (https://play.golang.org/p/tXsYGaqouPL)
+	```go
+	switch {
+		case true:
+			fmt.Println("print")
+		default:
+			fmt.Println("default")
+	}
+	```
+* Exemplo: (https://play.golang.org/p/ocrCpSLYWzj)
+	```go
+	// estrutura simples
+	x := "bolo"
+	switch x {
+	case "pipoca":
+		fmt.Println("pipoca")
+	default:
+		fmt.Println("não é pipoca")
+	}
+
+	// pode utilizar uma lista no case
+	h := 12
+	switch {
+	case h < 12:
+		fmt.Println("bom dia")
+	case h > 12:
+		fmt.Println("boa tarde")
+	default:
+		fmt.Println("olá")
+	}
+
+	// sem condição
+	n := "milho"
+	switch n {
+	case "milho", "pipoqueira", "pipoca":
+		fmt.Println("pipoca")
+	case "farinha", "batedeira", "leite":
+		fmt.Println("bolo")
+	default:
+		fmt.Println("não é pipoca nem bolo")
+	}
+	```
+* fallthrough: utilizado para pular ao próximo case, deve ser utilizado no final do caso, caso contrário não executará as instruções após ele (https://play.golang.org/p/dcnslI4T8Ru)
+	```go
+	switch {
+	case true:
+		fmt.Println("print")
+		fallthrough
+	default:
+		fmt.Println("default")
+	}
+	```
+## Operadores lógicos
+* Exemplo: (https://play.golang.org/p/LiYNrV_1lU3)
+	```go
+	// condition AND
+	fmt.Printf("true && true\t %v\n", true && true)
+	fmt.Printf("true && false\t %v\n", true && false)
+	// condition OR
+	fmt.Printf("true || true\t %v\n", true || true)
+	fmt.Printf("true || false\t %v\n", true || false)
+	// NOT
+	fmt.Printf("!true\t\t %v\n", !true)
+	fmt.Printf("!false\t\t %v\n", !false)
+	```
