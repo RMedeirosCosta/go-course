@@ -1,4 +1,4 @@
-## go-course
+# go-course
 
 ## Bool type
 - Zero value: `false`;
